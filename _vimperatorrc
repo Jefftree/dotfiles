@@ -82,8 +82,8 @@ set maxitems=4
 "Better keybindings
 noremap j 5j
 noremap k 10k
-noremap J gT
-noremap K gt
+noremap K gT
+noremap J gt
 
 noremap <C-q> :ref <Enter>
 
