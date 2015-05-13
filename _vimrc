@@ -98,7 +98,7 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline_theme='badwolf'
 let g:airline#extensions#tabline#buffer_idx_mode = 1	" display numbers in the tab line, and use mappings <leader>1 to <leader>9
 
-" Remove these lines soon. Makes terminal look less fked up
+" Remove these lines soon. 
 " hi CursorLine term=bold cterm=bold
 " highlight Cursor guifg=black
 ",highlight iCursor guifg=black
@@ -134,7 +134,7 @@ set statusline+=%*
 
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 0
 
 " Python-mode
@@ -178,6 +178,8 @@ let g:pymode_syntax_space_errors = g:pymode_syntax_all
 " Don't autofold code
 let g:pymode_folding = 0
 
+let NERDTreeIgnore=['^node_modules$', '^coverage$']
+
 function! ToggleErrors()
     let old_last_winnr = winnr('$')
     lclose
@@ -194,6 +196,9 @@ filetype plugin indent on
 
 au BufEnter *.c compiler gcc
 
+  " Highlight TODO, FIXME, NOTE, etc.
+autocmd Syntax * call matchadd('Todo',  '\W\zs\(TODO\|FIXME\|CHANGED\|XXX\|BUG\|HACK\)')
+autocmd Syntax * call matchadd('Debug', '\W\zs\(NOTE\|INFO\|IDEA\)')
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => UI/UX
@@ -239,8 +244,8 @@ set showmatch
 set nowrap
 
 "TODO: Experimental: relative line number
-" set number
-set relativenumber
+set number
+" set relativenumber
 
 function! NumberToggle()
   if(&relativenumber == 1)
