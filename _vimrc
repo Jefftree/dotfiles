@@ -36,7 +36,7 @@ set autoread                                        "auto reload if file saved e
 set fileformats+=mac                                "add mac to auto-detection of file format line endings
 set nrformats-=octal                                "always assume decimal numbers
 set showcmd                                         "always show last used command
-set autochdir
+set autochdir                                       "automatically change to file dir
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -46,13 +46,10 @@ filetype off " Required by vundle
 
 if (has('win32') || has('win64'))
     set rtp+=~/.vim
-    set rtp+=~/.vim/bundle/vimproc.vim
 endif
 set rtp+=~/.vim/bundle/neobundle.vim
 call neobundle#begin(expand('~/.vim/bundle/'))
 NeoBundleFetch 'Shougo/neobundle.vim'
-
-NeoBundle 'gmarik/Vundle.vim'               " Package manager
 
 " Interface
 NeoBundle 'flazz/vim-colorschemes'          " List of common color themes
@@ -60,8 +57,8 @@ NeoBundle 'bling/vim-airline'               " Status bar
 NeoBundle 'airblade/vim-gitgutter'          " Gitgutter
 NeoBundle 'kien/rainbow_parentheses.vim'    " double rainbow??
 NeoBundle 'mhinz/vim-startify'              " More useful startup page
-NeoBundle 'xolox/vim-misc'
-NeoBundle 'xolox/vim-colorscheme-switcher'
+NeoBundle 'xolox/vim-misc'                  " Used for colorscheme switcher
+NeoBundle 'xolox/vim-colorscheme-switcher'  " Quickswitch theme
 
 " Utilities
 NeoBundle 'Shougo/vimproc.vim', {
@@ -74,6 +71,7 @@ NeoBundle 'Shougo/vimproc.vim', {
     \ }
 
 "}}}
+
 " Functionality
 NeoBundle 'kien/ctrlp.vim'                  " File searcher
 NeoBundle 'godlygeek/tabular'               " Easy alignment of variables
@@ -88,6 +86,12 @@ NeoBundle 'scrooloose/syntastic'            " Syntax errors
 NeoBundle 'majutsushi/tagbar'               " Tag browsing
 NeoBundle 'scrooloose/nerdcommenter'        " Commenting shortcuts
 NeoBundle 'rking/ag.vim'                    " Searcher
+NeoBundle 'Shougo/unite.vim'                " UI for bunch of stuff
+
+NeoBundleLazy 'ujihisa/unite-colorscheme', {'autoload':{'unite_sources':'colorscheme'}} "{{{
+      nnoremap <silent> [unite]c :<C-u>Unite -winheight=10 -auto-preview -buffer-name=colorschemes colorscheme<cr>
+    "}}}
+NeoBundleLazy 'Shougo/neomru.vim', {'autoload':{'unite_sources':'file_mru'}}
 
 " Language specific
 NeoBundle 'derekwyatt/vim-scala'            " Scala support
@@ -103,20 +107,7 @@ NeoBundleLazy 'gregsexton/gitv', {'depends':['tpope/vim-fugitive'], 'autoload':{
     nnoremap <silent> <leader>gV :Gitv!<CR>
 "}}}
 
-NeoBundle 'Shougo/unite.vim' "{{{
-call unite#filters#matcher_default#use(['matcher_fuzzy'])
-call unite#filters#sorter_default#use(['sorter_rank'])
-call unite#custom#profile('default', 'context', {
-              \ 'start_insert': 1
-              \ })
-let g:unite_source_rec_async_command = 'ag --follow --nocolor --nogroup --hidden -g ""'
-if executable('ag')
-    let g:unite_source_grep_command='ag'
-    let g:unite_source_grep_default_opts='--nocolor --line-numbers --nogroup -S -C4'
-    let g:unite_source_grep_recursive_opt=''
-endif
 
-"call vundle#end()
 call neobundle#end()
 filetype plugin indent on
 NeoBundleCheck " Check for missing plugins on startup
@@ -280,6 +271,33 @@ nnoremap <silent> <leader>gl :Glog<CR>
 noremap <PageUp> :PrevColorScheme<CR>
 noremap <PageDown> :NextColorScheme<CR>
 
+" Unite
+call unite#filters#matcher_default#use(['matcher_fuzzy'])
+call unite#filters#sorter_default#use(['sorter_rank'])
+call unite#custom#profile('default', 'context', {
+              \ 'start_insert': 1,
+              \ 'winheight': 10,
+              \ 'direction': 'botright',
+              \ })
+let g:unite_source_history_yank_enable=1
+
+let g:unite_source_rec_async_command = 'ag --follow --nocolor --nogroup --hidden -g ""'
+if executable('ag')
+    let g:unite_source_grep_command='ag'
+    let g:unite_source_grep_default_opts='--nocolor --line-numbers --nogroup -S -C4'
+    let g:unite_source_grep_recursive_opt=''
+endif
+
+nmap <space> [unite]
+nnoremap [unite] <nop>
+
+if exists('b:git_dir')
+    nnoremap <silent> [unite]f :<C-u>Unite -toggle -auto-resize -buffer-name=files file_rec/git:!<cr><c-u>
+else 
+    nnoremap <silent> [unite]f :<C-u>Unite -toggle -auto-resize -buffer-name=files file_rec/async:!<cr><c-u>
+endif
+nnoremap <silent> [unite]<space> :<C-u>Unite -toggle -auto-resize -buffer-name=mixed file_rec/async:! buffer file_mru bookmark<cr><c-u>
+
   " Highlight TODO, FIXME, NOTE, etc.
 autocmd ColorScheme * highlight TodoRed      guifg=#FF5F5F gui=bold
 autocmd ColorScheme * highlight NoteOrange   guifg=LightGreen gui=bold
@@ -288,7 +306,7 @@ let g:delimitMate_expand_cr = 2
 
 augroup HiglightTODO
     autocmd!
-    autocmd WinEnter,VimEnter * :silent! call matchadd('TodoRed', 'TODO', -1)
+    autocmd WinEnter,VimEnter * :silent! call matchadd('TodoRed', '\vTODO(:)?', -1)
     autocmd WinEnter,VimEnter * :silent! call matchadd('NoteOrange', 'NOTE', -1)
     autocmd WinEnter,VimEnter * :silent! call matchadd('Todo', 'INFO', -1)
     autocmd WinEnter,VimEnter * :silent! call matchadd('Todo', 'IDEA', -1)
@@ -319,6 +337,8 @@ set smartcase  " case-sensitive if uppercase search
 set hlsearch   " Highlight search results
 set incsearch  " Show search matches as you type
 
+ nnoremap <silent> <BS> :set hlsearch! hlsearch?<cr>
+
 "TODO:  For regular expressions turn magic on. what is magic?
 " set magic
 
@@ -342,7 +362,7 @@ function! NumberToggle()
   endif
 endfunc
 
-nnoremap <C-m> :call NumberToggle()<cr>
+" nnoremap <C-m> :call NumberToggle()<cr>
 
 " Highlight cursor line
 set cursorline
@@ -546,3 +566,22 @@ command! -bang -complete=buffer -nargs=? Bclose call s:Bclose('<bang>', '<args>'
 nnoremap <silent> <Leader>bd :Bclose<CR>
 
 nnoremap <expr> gp '`[' . strpart(getregtype(), 0, 1) . '`]'
+
+if has('gui_running')
+    colorscheme jellybeans
+    "colorscheme herald
+    set guifont=Inconsolata\ for\ Powerline:h14
+    "set guifont=Inconsolata:h11:cANSI
+    au GUIEnter * simalt ~x
+    set guioptions-=m  "remove menu bar
+    set guioptions-=T  "remove toolbar
+    set guioptions-=r  "remove right-hand scroll bar
+    set guioptions-=L  "remove left-hand scroll bar
+
+    set guicursor+=n-v-c:blinkon0
+
+    hi CursorLine term=bold cterm=bold guibg=#1c136f
+    highlight Cursor guifg=black guibg=#65e770
+    highlight iCursor guifg=black guibg=#65e770
+    hi clear Conceal
+endif 
