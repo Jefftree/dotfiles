@@ -38,7 +38,6 @@ set nrformats-=octal                                "always assume decimal numbe
 set showcmd                                         "always show last used command
 set autochdir                                       "automatically change to file dir
 
-
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Plugins
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -276,8 +275,8 @@ call unite#filters#matcher_default#use(['matcher_fuzzy'])
 call unite#filters#sorter_default#use(['sorter_rank'])
 call unite#custom#profile('default', 'context', {
               \ 'start_insert': 1,
-              \ 'winheight': 10,
-              \ 'direction': 'botright',
+              \ 'winheight': 8,
+              \ 'direction': 'botright'
               \ })
 let g:unite_source_history_yank_enable=1
 
@@ -291,11 +290,10 @@ endif
 nmap <space> [unite]
 nnoremap [unite] <nop>
 
-if exists('b:git_dir')
-    nnoremap <silent> [unite]f :<C-u>Unite -toggle -auto-resize -buffer-name=files file_rec/git:!<cr><c-u>
-else 
-    nnoremap <silent> [unite]f :<C-u>Unite -toggle -auto-resize -buffer-name=files file_rec/async:!<cr><c-u>
-endif
+"if exists('b:git_dir')
+
+nnoremap <silent> [unite]f :<C-u>Unite -buffer-name=Search -input= -resume file_rec/async:!<cr>
+    "<c-u> means cursor up one line
 nnoremap <silent> [unite]<space> :<C-u>Unite -toggle -auto-resize -buffer-name=mixed file_rec/async:! buffer file_mru bookmark<cr><c-u>
 
   " Highlight TODO, FIXME, NOTE, etc.
@@ -584,4 +582,4 @@ if has('gui_running')
     highlight Cursor guifg=black guibg=#65e770
     highlight iCursor guifg=black guibg=#65e770
     hi clear Conceal
-endif 
+endif
