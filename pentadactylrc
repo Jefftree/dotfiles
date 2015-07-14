@@ -1,0 +1,4 @@
+set hintkeys=asdfg;lkjh
+map -builtin <S-j> <C-n>
+map -builtin <S-k> <C-p>
+colorscheme zenburn
