@@ -16,9 +16,19 @@ map -b <C-v> <C-v><C-v>
 map -b <C-c> <C-v><C-c>
 nmap -b i <C-v>
 
+nmap -b <bs> <nop>
+
+" Bye bell
+set visualbell
+hi Bell display: none;
+
 "limit number of items displayed on commandline at once (default is 20)
 set maxitems=8
 
 set wildmode=list:full
+
+" smooth scroll setting
+set scrollsteps=20
+set scrolltime=200
 
 "so ~/pentadactyl/styles/ycombinator.css
