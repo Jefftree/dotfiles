@@ -1,0 +1,34 @@
+colorscheme gruvbox-dark
+
+set guioptions=Cs
+
+set hintkeys=asdfg;lkjh
+map -builtin <S-j> <C-n>
+map -builtin <S-k> <C-p>
+hi FontFixed -a font-size:18px !important; font-family:"Consolas" !important;
+hi -a Hint font-size: 18pt !important;
+
+nmap -b j 5j
+nmap -b k 10k
+
+"Copy and paste
+map -b <C-v> <C-v><C-v>
+map -b <C-c> <C-v><C-c>
+nmap -b i <C-v>
+
+nmap -b <bs> <nop>
+
+" Bye bell
+set visualbell
+hi Bell display: none;
+
+"limit number of items displayed on commandline at once (default is 20)
+set maxitems=8
+
+set wildmode=list:full
+
+" smooth scroll setting
+set scrollsteps=20
+set scrolltime=200
+
+"so ~/pentadactyl/styles/ycombinator.css
