@@ -13,6 +13,7 @@ alias gcm='git commit -m'
 
 alias vi=vim
 
+alias l='ls -l'
 alias ll='ls -alGh'
 alias ls='ls -G'
 
