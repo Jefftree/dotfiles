@@ -9,9 +9,9 @@
 } &!
 
 # Moose inspirational message of the day
-if (( $+commands[fortune] )); then
-  if [[ -t 0 || -t 1 ]]; then
-    fortune -s | cowsay -f moose | lolcat
-    print
-  fi
-fi
+#if (( $+commands[fortune] )); then
+  #if [[ -t 0 || -t 1 ]]; then
+    #fortune -s | cowsay -f moose | lolcat
+    #print
+  #fi
+#fi
