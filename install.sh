@@ -6,6 +6,10 @@
 dir=~/.dotfiles
 files="tmux.conf"
 
+if [ ! -z ".zprezto" ]; then
+    git clone https://github.com/sorin-ionescu/prezti.git ~/.zprezto
+fi
+
 for file in $files; do
     echo "Symlinking $file"
     ln -s $dir/$file ~/.$file
