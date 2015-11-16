@@ -10,3 +10,10 @@ for file in $files; do
     echo "Symlinking $file"
     ln -s $dir/$file ~/.$file
 done
+
+zfiles="zlogin zpreztorc zshenv zshrc"
+
+for file in $zfiles; do
+    echo "Symlinking $file"
+    ln -s "$dir/zsh/$file" ~/.file
+done
