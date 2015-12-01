@@ -4,6 +4,7 @@ source "$HOME/.zprezto/init.zsh"
 # Aliases (should go in alias.zsh)
 alias gs='git status'
 alias gst='git stash'
+alias gsp='git stash pop'
 alias gd='git diff'
 alias gpl='git pull'
 alias gps='git push'
