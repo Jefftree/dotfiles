@@ -11,6 +11,9 @@ alias ga='git add -A'
 alias gc='git commit -am'
 alias gcm='git commit -m'
 
+alias m='make'
+alias mc='make clean'
+
 alias vi=vim
 
 alias l='ls -l'
