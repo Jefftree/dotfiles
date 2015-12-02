@@ -46,7 +46,7 @@ setopt HIST_REDUCE_BLANKS # Remove extra blanks from each command line being add
 setopt EXTENDED_HISTORY # Include more information about when the command was executed, etc
 
 function stopwatch(){
-    date1=`date +%s`; 
+    date1=`date +%s`;
     while true; do 
         echo -ne "$(date -jf "%s" $((`date +%s` - $date1)) +%H:%M:%S)\r"; 
         sleep 0.1
