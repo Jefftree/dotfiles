@@ -1,7 +1,6 @@
 # Prezto
 source "$HOME/.zprezto/init.zsh"
 
-# Aliases (should go in alias.zsh)
 alias gs='git status'
 alias gst='git stash'
 alias gsp='git stash pop'
@@ -12,7 +11,7 @@ alias ga='git add -A'
 alias gc='git commit -am'
 alias gcm='git commit -m'
 
-alias ta='tmux attach'
+alias ta='tmux attach -d'
 alias tat='tmux attach -t'
 alias tm='tmux list-sessions'
 
@@ -26,6 +25,8 @@ alias ll='ls -alGh'
 alias ls='ls -G'
 
 alias rm='nocorrect rm'
+
+alias ts='testSuite'
 
 # Colors
 export TERM=xterm-256color
