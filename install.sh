@@ -6,7 +6,7 @@
 dir=~/.dotfiles
 files="tmux.conf ctags"
 
-if [ ! -z "~/.zprezto" ]; then
+if [ ! -d ~/.zprezto ]; then
     git clone https://github.com/sorin-ionescu/prezto.git ~/.zprezto
 fi
 
