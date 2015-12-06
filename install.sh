@@ -4,20 +4,28 @@
 ##########################
 
 dir=~/.dotfiles
-files="tmux.conf"
+files="tmux.conf ctags"
 
-if [ ! -z ".zprezto" ]; then
+if [ ! -z "~/.zprezto" ]; then
     git clone https://github.com/sorin-ionescu/prezto.git ~/.zprezto
 fi
 
 for file in $files; do
-    echo "Symlinking $file"
-    ln -s $dir/$file ~/.$file
+    if [ ! -f ~/.$file ]; then
+        echo "Symlinking $file"
+        ln -s $dir/$file ~/.$file
+    else
+        echo "$file" already exists
+    fi
 done
 
 zfiles="zlogin zpreztorc zshenv zshrc"
 
 for file in $zfiles; do
-    echo "Symlinking $file"
-    ln -s "$dir/zsh/$file" ~/.$file
+    if [ ! -f ~/.$file ]; then
+        echo "Symlinking $file"
+        ln -s "$dir/zsh/$file" ~/.$file
+    else
+        echo "$file" already exists
+    fi
 done
