@@ -1,3 +1,4 @@
+
 # Prezto
 source "$HOME/.zprezto/init.zsh"
 
@@ -22,7 +23,7 @@ alias vi=vim
 
 alias l='ls -l'
 alias ll='ls -alGh'
-alias ls='ls -G'
+alias ls='ls -G --color'
 
 alias rm='nocorrect rm'
 
