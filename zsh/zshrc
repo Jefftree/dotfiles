@@ -21,7 +21,8 @@ alias mc='make clean'
 
 alias vi=vim
 
-alias l='ls -l'
+alias l='git ls-files'
+
 alias ll='ls -alGh'
 alias ls='ls -G --color'
 
@@ -32,7 +33,6 @@ alias ts='testSuite'
 alias yolovim='vim -N -u NONE'
 
 alias myip="curl http://myip.dnsomatic.com && echo ''"
-
 
 # Colors
 export TERM=screen-256color
@@ -55,4 +55,3 @@ setopt APPEND_HISTORY # Allow multiple terminal sessions to all append to one zs
 setopt INC_APPEND_HISTORY # Add comamnds as they are typed, don't wait until shell exit
 setopt HIST_REDUCE_BLANKS # Remove extra blanks from each command line being added to history
 setopt EXTENDED_HISTORY # Include more information about when the command was executed, etc
-
