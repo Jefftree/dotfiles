@@ -2,6 +2,8 @@
 # Prezto
 source "$HOME/.zprezto/init.zsh"
 
+prompt skwp
+
 alias gs='git status'
 alias gst='git stash'
 alias gsp='git stash pop'
