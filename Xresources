@@ -1,0 +1,9 @@
+XTerm*metaSendsEscape: true
+XTerm*locale: true
+XTerm*faceName:Inconsolata
+
+!URxvt.background: [95]#000000
+URxvt.font: xft:Inconsolata:bold:size=12
+URxvt.scrollBar: false
+URxvt.cursorColor: #65E770
+!URxvt.letterSpace: -1
