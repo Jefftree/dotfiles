@@ -29,3 +29,11 @@ for file in $zfiles; do
         echo "$file" already exists
     fi
 done
+
+
+other() {
+    linkdir=".pentadactyl .i3"
+    for directory in $linkdir; do
+        ln -s $dir/$directory ~/
+    done
+}
