@@ -23,7 +23,8 @@ if [ -f "$usermodmap" ]; then
     xmodmap "$usermodmap"
 fi
 
-xrandr --output VGA-0 --mode 1920x1080
+/usr/bin/VBoxClient-all
+#xrandr --output VGA-0 --mode 1920x1080
 
 # start some nice programs
 
