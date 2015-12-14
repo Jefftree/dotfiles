@@ -1,0 +1,9 @@
+#! /bin/bash
+# if reattach-to-userspace is not available, just run the command
+if [ -n "$(command -v reattach-to-user-namespace)" ]; then
+    reattach-to-user-namespace $@
+elif [ -n "$(command -v xclip)" ]; then
+    xclip -in -selection clipboard
+else
+    exec $@
+fi
