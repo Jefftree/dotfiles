@@ -1,4 +1,15 @@
 
+export PATH=~/.dotfiles/bin:$PATH
+#export PATH=~/.powerline/scripts:$PATH
+
+export SCALA_HOME=/usr/local/bin/scala
+#export PATH=$PATH:$SCALA_HOME/bin
+#export PATH=$PATH:~/bin/spark-1.5.1-bin-hadoop2.6/bin
+#export PATH=$PATH:~/bin/hadoop-2.6.1
+
+
+
+
 # Prezto
 source "$HOME/.zprezto/init.zsh"
 

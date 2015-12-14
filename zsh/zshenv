@@ -1,13 +1,5 @@
 # Environment variables
 
-export PATH=~/.dotfiles/bin:$PATH
-#export PATH=~/.powerline/scripts:$PATH
-
-export SCALA_HOME=/usr/local/bin/scala
-#export PATH=$PATH:$SCALA_HOME/bin
-#export PATH=$PATH:~/bin/spark-1.5.1-bin-hadoop2.6/bin
-#export PATH=$PATH:~/bin/hadoop-2.6.1
-
 # Ensure that a non-login, non-interactive shell has a defined environment.
 if [[ "$SHLVL" -eq 1 && ! -o LOGIN && -s "${ZDOTDIR:-$HOME}/.zprofile" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprofile"
