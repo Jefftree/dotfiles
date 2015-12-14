@@ -1,0 +1,29 @@
+#!/bin/bash
+
+file=$1
+lowertitle=`echo $file | sed s/\.[^\.]*$//`
+
+# Changes title to uppercase and adds a space between course name and code
+title=`echo $lowertitle | sed -e 's/\([a-z]\)\([0-9]\)/\1 \2/' | awk '{print toupper($0)}'`
+
+# temp fix for code blocks
+yolo_compile() {
+    pandoc $1 -o $lowertitle.pdf
+}
+
+# Template ignores lstlisting code blocks for some reason
+template_compile() {
+    echo "Generating Latex for $title Notes..."
+
+    pandoc $1 -o $lowertitle.tex
+
+    echo "Compiling Latex for $title Notes..."
+
+    pandoc --latex-engine=xelatex --template template.latex --toc -s $lowertitle.tex -o $lowertitle.pdf \
+        -V "title:$title"
+
+    echo "Cleaning up files..."
+    rm $lowertitle.tex 2> /dev/null
+}
+
+yolo_compile $file
