@@ -45,6 +45,9 @@ alias yolovim='vim -N -u NONE'
 
 alias myip="curl http://myip.dnsomatic.com && echo ''"
 
+alias aria='aria2c'
+alias baka='baka-mplayer'
+
 # Colors
 export TERM=screen-256color
 export CLICOLOR=1
