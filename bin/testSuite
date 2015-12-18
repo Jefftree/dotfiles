@@ -1,0 +1,34 @@
+#!/bin/bash
+
+mkdir "yolodir" 2> /dev/null
+#cat $1 | while read i; do
+for i in `ls | sed -n 's/\..*//p'`; do
+    if [ -f "$i.in" ] && [ -r "$i.in" ]; then
+        file=`mktemp yolodir/a.XXXXX`
+        python $1 < "$i.in" > $file
+        if [ -f "$i.out" ]; then
+            diff "$i.out" $file > /dev/null
+            a=$? # Check if this is 0 for diff
+            if [ 1 -eq $a ]; then
+                echo ""
+                echo "Test failed: $i"
+                echo "Input:"
+                cat "$i.in"
+                echo "Expected:"
+                cat "$i.out"
+                echo "Actual:"
+                cat $file
+                echo ""
+            fi
+        else
+            echo "Input for $i:"
+            cat "$i.in"
+            echo "Output for $i"
+            cat $file
+            echo ""
+        fi
+        rm $file
+     fi
+done
+rmdir yolodir
+
