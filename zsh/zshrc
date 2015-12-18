@@ -35,7 +35,13 @@ alias vi=vim
 alias l='git ls-files'
 
 alias ll='ls -alGh'
-alias ls='ls -G --color'
+
+unamestr=`uname`
+if [[ "$unamestr" == 'Linux' ]]; then
+    alias ls='ls -G --color'
+else
+    alias ls='ls -G'
+fi
 
 alias rm='nocorrect rm'
 
