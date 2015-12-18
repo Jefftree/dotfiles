@@ -23,7 +23,8 @@ alias ga='git add -A'
 alias gc='git commit -am'
 alias gcm='git commit -m'
 
-alias ta='tmux attach -d'
+alias ta='tmux attach'
+alias tad='tmux attach -d'
 alias tat='tmux attach -t'
 alias tm='tmux list-sessions'
 
