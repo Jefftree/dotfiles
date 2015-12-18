@@ -7,6 +7,7 @@ set! extensions.hidtb.auto_hide=true
 set! extensions.hidtb.hide_delay=100
 set! extensions.hidtb.toggle_ctrl=false
 set! extensions.hidtb.toggle_key=120
+"set! xpinstall.signatures.required=false
 
 set! browser.search.hiddenOneOffs=Yahoo,Bing,Amazon.com,eBay,Twitter
 
