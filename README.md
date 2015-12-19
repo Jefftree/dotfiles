@@ -1,11 +1,22 @@
 # dotfiles
 
-These are the configuration files for my command line interface with zsh + tmux + vim. It also includes setup for pentadactyl with Firefox.
+Configurations for Arch Linux cross compatible with OS X.
 
-The files are symlinked to their respective locations in the HOME directory.
+## Main Features
+- vim
+- zsh
+- tmux
 
-Installation files have not been created yet as I am still exclusively working on one machine.
+## Other
+- pentadactyl
+- i3
+- urxvt
+- Useful scripts in `/bin`
 
-**Preview:**
+To run install script, run `install.sh`
 
-![Setup Preview](http://puu.sh/ksBvi/787f89f27a.png "Setup")
+Install script symlinks everything to home directory.
+
+<!--**Preview:**-->
+
+<!--![Setup Preview](http://puu.sh/ksBvi/787f89f27a.png "Setup")-->
