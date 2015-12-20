@@ -1,34 +1,48 @@
 #!/bin/bash
-
 mkdir "yolodir" 2> /dev/null
-#cat $1 | while read i; do
-for i in `ls | sed -n 's/\..*//p'`; do
-    if [ -f "$i.in" ] && [ -r "$i.in" ]; then
-        file=`mktemp yolodir/a.XXXXX`
-        python $1 < "$i.in" > $file
-        if [ -f "$i.out" ]; then
-            diff "$i.out" $file > /dev/null
-            a=$? # Check if this is 0 for diff
-            if [ 1 -eq $a ]; then
-                echo ""
-                echo "Test failed: $i"
-                echo "Input:"
-                cat "$i.in"
-                echo "Expected:"
-                cat "$i.out"
-                echo "Actual:"
-                cat $file
-                echo ""
-            fi
-        else
-            echo "Input for $i:"
+
+COL='\033[0;31m'
+COL2='\033[1;35m'
+NC='\033[0m'
+test() {
+i=`echo $1 | sed -n 's/\..*//p'`
+if [ -f "$i.in" ] && [ -r "$i.in" ]; then
+    file=`mktemp yolodir/a.XXXXX`
+    python $1 < "$i.in" > $file
+    if [ -f "$i.out" ]; then
+        diff "$i.out" $file > /dev/null
+        a=$? # Check if this is 0 for diff
+        if [ 1 -eq $a ]; then
+            echo ""
+            echo "Test failed: $i"
+            echo "Input:"
             cat "$i.in"
-            echo "Output for $i"
+            echo "Expected:"
+            cat "$i.out"
+            echo "Actual:"
             cat $file
             echo ""
         fi
-        rm $file
-     fi
-done
+    else
+        echo -e "${COL2}Input for $i:${NC}"
+        cat "$i.in"
+        echo ""
+        echo -e "${COL}Output for $i:${NC}"
+        cat $file
+        echo ""
+    fi
+    rm $file
+fi
+}
+
+
+if [[ $# -eq 1 ]]; then
+    test $1
+else
+    for i in `ls | grep -v '\.in'`; do
+        test $i
+    done
+fi
 rmdir yolodir
+
 

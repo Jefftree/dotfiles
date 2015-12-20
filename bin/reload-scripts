@@ -1,5 +1,6 @@
-set +o noclobber
+set +o noclobber # prevents asking for overwrite
 pacman -Qet | sed 's/\s.*$//' > ~/.dotfiles/pacman/packages.txt
 echo "Package list updated in ~/.dotfiles/pacman/packages.txt"
 set -o noclobber
 
+# vim:filetype=sh
