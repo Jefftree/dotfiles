@@ -1,0 +1,5 @@
+set +o noclobber
+pacman -Qet | sed 's/\s.*$//' > ~/.dotfiles/pacman/packages.txt
+echo "Package list updated in ~/.dotfiles/pacman/packages.txt"
+set -o noclobber
+
