@@ -4,12 +4,12 @@
 set $mod Mod4
 
 # Workspaces
-set $tag0 "0 ;)"
+set $tag0 "0 "
 set $tag1 "1 "
 set $tag2 "2 code"
 set $tag3 "3 "
 set $tag4 "4 irc"
-set $tag5 "5 music"
+set $tag5 "5 ♪"
 set $tag6 "6 media "
 set $tag7 "7 play"
 set $tag8 "8 other"
