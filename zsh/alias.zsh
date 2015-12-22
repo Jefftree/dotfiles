@@ -29,6 +29,8 @@ else
     alias ls='ls -G'
 fi
 
+alias pce='sudo shutdown -t 0'
+
 alias rm='nocorrect rm'
 
 alias ts='testSuite'
