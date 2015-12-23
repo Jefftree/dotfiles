@@ -42,4 +42,4 @@ alias myip="curl http://myip.dnsomatic.com && echo ''"
 alias aria='aria2c'
 alias baka='baka-mplayer'
 
-
+alias 'cd..'='cd ..'
