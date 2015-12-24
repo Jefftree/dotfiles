@@ -1,3 +1,11 @@
+Xft.antialias: 1
+Xft.autohint: 1
+Xft.dpi: 96
+Xft.hinting: 1
+Xft.hintstyle: hintfull
+Xft.lcdfilter: lcddefault
+Xft.rgba: rgb
+
 rofi.background: #151718
 rofi.foreground: #d6d6d6
 rofi.hlbg: #41535B
@@ -16,7 +24,7 @@ XTerm*locale: true
 XTerm*faceName:Inconsolata
 
 !URxvt.background: [95]#000000
-URxvt.font: xft:Inconsolata:bold:size=12
+URxvt.font: xft:Source Code Pro:Semibold:size=10
 URxvt.scrollBar: false
 URxvt.cursorColor: #65E770
 !URxvt.letterSpace: -1

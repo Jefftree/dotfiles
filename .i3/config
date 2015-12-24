@@ -4,9 +4,9 @@
 set $mod Mod4
 
 # Workspaces
-set $tag0 "0 "
+set $tag0 "0 "
 set $tag1 "1 "
-set $tag2 "2 code"
+set $tag2 "2 "
 set $tag3 "3 "
 set $tag4 "4 irc"
 set $tag5 "5 ♪"
@@ -19,7 +19,7 @@ assign [class="baka-mplayer"] $tag6
 
 # General
 hide_edge_borders both
-new_window none
+#new_window none
 #font pango:System San Francisco Display, Awesome 11
 #font pango:DejaVu Sans Mono Bold 8
 font pango:Inconsolata Bold 12
@@ -38,6 +38,8 @@ bindsym $mod+space exec rofi -show run
 bindsym $mod+d exec lxappearance
 
 bindsym $mod+z exec "xrdb ~/.Xresources"
+bindsym --release Control+$mod+1 exec scrot -s '%Y-%m-%d-%T.png' -e 'mv $f ~/Pictures/'
+#bindsym Control+$mod+1 exec scrot -s '%Y-%m-%d-%T_$wx$h_scrot.png' -e 'mv $f ~/Pictures/'
 
 #############################
 # Windows

@@ -1,5 +1,6 @@
 
 export PATH=~/.dotfiles/bin:$PATH
+export PATH=~/bb8:$PATH
 #export PATH=~/.powerline/scripts:$PATH
 
 export SCALA_HOME=/usr/local/bin/scala
@@ -11,6 +12,10 @@ export SCALA_HOME=/usr/local/bin/scala
 source "$HOME/.zprezto/init.zsh"
 
 source "$DOTFILES/zsh/alias.zsh"
+
+# Command not found
+source /usr/share/doc/pkgfile/command-not-found.zsh
+
 
 # Colors
 export TERM=screen-256color
