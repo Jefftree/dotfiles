@@ -7,22 +7,23 @@ set $mod Mod4
 set $tag0 "0 "
 set $tag1 "1 "
 set $tag2 "2 "
-set $tag3 "3 "
-set $tag4 "4 irc"
-set $tag5 "5 ♪"
-set $tag6 "6 media "
-set $tag7 "7 play"
-set $tag8 "8 other"
+set $tag3 "3 "
+set $tag4 "4 "
+set $tag5 "5 yolo1"
+set $tag6 "6 yolo2"
+set $tag7 "7 "
+set $tag8 "8 "
+set $tag9 "9 "
 
-assign [class="Firefox"] $tag3
-assign [class="baka-mplayer"] $tag6
+assign [class="baka-mplayer"] $tag8
+assign [class="Firefox"] $tag9
 
 # General
 hide_edge_borders both
-#new_window none
-#font pango:System San Francisco Display, Awesome 11
+new_window none
+font pango:System San Francisco Display, Awesome 11
 #font pango:DejaVu Sans Mono Bold 8
-font pango:Inconsolata Bold 12
+#font pango:Inconsolata Bold 12
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -37,9 +38,13 @@ bindsym $mod+space exec rofi -show run
 
 bindsym $mod+d exec lxappearance
 
-bindsym $mod+z exec "xrdb ~/.Xresources"
+bindsym $mod+b exec "xrdb ~/.Xresources"
 bindsym --release Control+$mod+1 exec scrot -s '%Y-%m-%d-%T.png' -e 'mv $f ~/Pictures/'
-#bindsym Control+$mod+1 exec scrot -s '%Y-%m-%d-%T_$wx$h_scrot.png' -e 'mv $f ~/Pictures/'
+
+bindsym $mod+n exec amixer set Master -q 5%-
+bindsym $mod+m exec amixer set Master -q 5%+
+
+bindsym $mod+a exec "mpc toggle"
 
 #############################
 # Windows
@@ -64,16 +69,16 @@ bindsym $mod+v split v
 bindsym $mod+f fullscreen toggle
 
 # container layout (tiling, stacked, tabbed)
-bindsym $mod+q layout toggle split
-bindsym $mod+w layout stacking
-bindsym $mod+e layout tabbed
+bindsym $mod+z layout toggle split
+bindsym $mod+x layout stacking
+bindsym $mod+c layout tabbed
 
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
 
 # switch to workspace
-bindsym $mod+grave workspace $tag0
 bindsym $mod+1 workspace $tag1
+bindsym $mod+grave workspace $tag0
 bindsym $mod+2 workspace $tag2
 bindsym $mod+3 workspace $tag3
 bindsym $mod+4 workspace $tag4
@@ -81,6 +86,11 @@ bindsym $mod+5 workspace $tag5
 bindsym $mod+6 workspace $tag6
 bindsym $mod+7 workspace $tag7
 bindsym $mod+8 workspace $tag8
+bindsym $mod+9 workspace $tag9
+
+bindsym $mod+q workspace $tag7
+bindsym $mod+w workspace $tag8
+bindsym $mod+e workspace $tag9
 
 # move focused container to workspace
 bindsym $mod+Shift+grave move container to workspace $tag0
@@ -92,9 +102,10 @@ bindsym $mod+Shift+5 move container to workspace $tag5
 bindsym $mod+Shift+6 move container to workspace $tag6
 bindsym $mod+Shift+7 move container to workspace $tag7
 bindsym $mod+Shift+8 move container to workspace $tag8
+bindsym $mod+Shift+9 move container to workspace $tag9
 
 # focus the parent container
-bindsym $mod+a focus parent
+#bindsym $mod+a focus parent
 # focus the child container
 #bindsym $mod+d focus child
 
