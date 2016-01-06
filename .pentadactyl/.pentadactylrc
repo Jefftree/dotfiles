@@ -28,8 +28,8 @@ nmap -b j 5j
 nmap -b k 10k
 
 "Copy and paste (Unnecessary on mac as command is used)
-"map -b <C-v> <C-v><C-v>
-"map -b <C-c> <C-v><C-c>
+map -b <C-v> <C-v><C-v>
+map -b <C-c> <C-v><C-c>
 nmap -b i <C-v>
 
 nmap -b <bs> <nop>
