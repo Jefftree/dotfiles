@@ -21,7 +21,9 @@ fi
 
 
 # Colors
-export TERM=screen-256color
+# You can't just change the terminal...
+#export TERM=screen-256color
+#export TERM=rxvt-unicode-256color
 export CLICOLOR=1
 export LSCOLORS=Gxfxcxdxbxegedabagacad
 
