@@ -19,6 +19,9 @@ if [[ -f /usr/share/doc/pkgfile/command-not-found.zsh ]]; then
     source /usr/share/doc/pkgfile/command-not-found.zsh
 fi
 
+# Ignore binary/compiled files for vim autocompletion
+compinit
+zstyle ':completion:*:*:vim:*' file-patterns '^*.(aux|log|pdf|jpg|png):source-files' '*:all-files'
 
 # Colors
 # You can't just change the terminal...
