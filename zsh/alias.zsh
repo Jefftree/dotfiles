@@ -1,3 +1,4 @@
+# Git
 alias gs='git status'
 alias gst='git stash'
 alias gsp='git stash pop'
@@ -8,6 +9,10 @@ alias ga='git add -A'
 alias gc='git commit -am'
 alias gcm='git commit -m'
 
+alias gl="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
+alias gll='git log'
+
+# Tmux
 alias ta='tmux attach'
 alias tad='tmux attach -d'
 alias tat='tmux attach -t'
@@ -43,3 +48,8 @@ alias aria='aria2c'
 alias baka='baka-mplayer'
 
 alias 'cd..'='cd ..'
+
+alias Syu='yaourt -Syu'
+
+# Execute last command as root
+alias 'pls'='sudo $(history | tail -n 1 | sed -e "s/^[ ]*[0-9]*[ ]*//g")'
