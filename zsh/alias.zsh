@@ -12,6 +12,8 @@ alias gcm='git commit -m'
 alias gl="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
 alias gll='git log'
 
+alias pipi='pip3 install --user'
+
 # Tmux
 alias ta='tmux attach'
 alias tad='tmux attach -d'

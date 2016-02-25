@@ -14,6 +14,8 @@ source "$HOME/.zprezto/init.zsh"
 
 source "$DOTFILES/zsh/alias.zsh"
 
+source /usr/share/autoenv-git/activate.sh
+
 # Command not found: Arch only
 if [[ -f /usr/share/doc/pkgfile/command-not-found.zsh ]]; then
     source /usr/share/doc/pkgfile/command-not-found.zsh
@@ -21,7 +23,7 @@ fi
 
 # Ignore binary/compiled files for vim autocompletion
 compinit
-zstyle ':completion:*:*:vim:*' file-patterns '^*.(aux|log|pdf|jpg|png):source-files' '*:all-files'
+zstyle ':completion:*:*:vim:*' file-patterns '^*.(aux|log|pdf|jpg|png|out):source-files' '*:all-files'
 
 # Colors
 # You can't just change the terminal...
