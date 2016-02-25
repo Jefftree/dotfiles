@@ -4,6 +4,11 @@ Configurations for Arch Linux cross compatible with OS X.
 
 ![Doge](http://i.imgur.com/5N3IEq2.jpg)
 
+## Screenshots
+
+![Screen1](http://jying.ca/i/aVa2H4s.png)
+
+
 ## Main Features
 - vim
 - zsh
