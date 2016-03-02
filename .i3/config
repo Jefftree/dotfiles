@@ -9,7 +9,7 @@ set $tag1 "1 "
 set $tag2 "2 "
 set $tag3 "3 "
 set $tag4 "4 "
-set $tag5 "5 yolo1"
+set $tag5 "5 TODO"
 set $tag6 "6 yolo2"
 set $tag7 "7 "
 set $tag8 "8 "
@@ -146,6 +146,7 @@ set $TITLE_BG #161616
 set $TITLE_TEXT #00ff00
 set $INACTIVE_BG #161616
 set $INACTIVE_TEXT #C9CCD8
+
 
 bar {
     colors {
