@@ -1,7 +1,7 @@
 
 export PATH=~/.dotfiles/bin:$PATH
 export PATH=~/bb8:$PATH
-export PATH=~/.node_modules/bin:$PATH
+export PATH=~/.npm/npm-packages/bin:$PATH
 #export PATH=~/.powerline/scripts:$PATH
 
 export SCALA_HOME=/usr/local/bin/scala
@@ -23,7 +23,7 @@ fi
 
 # Ignore binary/compiled files for vim autocompletion
 compinit
-zstyle ':completion:*:*:vim:*' file-patterns '^*.(aux|log|pdf|jpg|png|out):source-files' '*:all-files'
+zstyle ':completion:*:*:vim:*' file-patterns '^*.(aux|pdf|jpg|png|out):source-files' '*:all-files'
 
 # Colors
 # You can't just change the terminal...
