@@ -14,8 +14,6 @@ source "$HOME/.zprezto/init.zsh"
 
 source "$DOTFILES/zsh/alias.zsh"
 
-source /usr/share/autoenv-git/activate.sh
-
 # Command not found: Arch only
 if [[ -f /usr/share/doc/pkgfile/command-not-found.zsh ]]; then
     source /usr/share/doc/pkgfile/command-not-found.zsh

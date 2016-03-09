@@ -29,6 +29,8 @@ alias l='git ls-files'
 
 alias ll='ls -alGh'
 
+alias pyenv='source bin/activate'
+
 unamestr=`uname`
 if [[ "$unamestr" == 'Linux' ]]; then
     alias ls='ls -G --color'

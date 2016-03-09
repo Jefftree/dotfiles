@@ -24,8 +24,11 @@ if [ -f "$usermodmap" ]; then
 fi
 
 /usr/bin/VBoxClient-all
-xrandr --output VGA-0 --mode 1920x1080
-xrandr --output VGA-1 --mode 1920x1080 --right-of VGA-0
+
+# TODO: Check number of monitors first
+#xrandr --output VGA-0 --mode 1920x1080
+xrandr --output VGA-1 --right-of VGA-0
+
 
 # start some nice programs
 
