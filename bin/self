@@ -1,0 +1,3 @@
+vim -O ~/log/`date +"%m-%d"`.md ~/log/tasks.md
+
+

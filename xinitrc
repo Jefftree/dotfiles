@@ -27,7 +27,7 @@ fi
 
 # TODO: Check number of monitors first
 #xrandr --output VGA-0 --mode 1920x1080
-xrandr --output VGA-1 --right-of VGA-0
+#xrandr --output VGA-1 --right-of VGA-0
 
 
 # start some nice programs
