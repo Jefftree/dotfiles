@@ -2,7 +2,6 @@
 export PATH=~/.dotfiles/bin:$PATH
 export PATH=~/bb8:$PATH
 export PATH=~/.npm/npm-packages/bin:$PATH
-#export PATH=~/.powerline/scripts:$PATH
 
 export SCALA_HOME=/usr/local/bin/scala
 #export PATH=$PATH:$SCALA_HOME/bin
