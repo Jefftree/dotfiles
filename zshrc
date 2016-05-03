@@ -12,6 +12,9 @@ export SCALA_HOME=/usr/local/bin/scala
 source "$HOME/.zprezto/init.zsh"
 
 source "$DOTFILES/zsh/alias.zsh"
+if [[ ~/.localrc ]]; then
+    source ~/.localrc
+fi
 
 # Command not found: Arch only
 if [[ -f /usr/share/doc/pkgfile/command-not-found.zsh ]]; then
