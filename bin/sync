@@ -1,0 +1,3 @@
+cd ~/Share/workspace/cs241
+echo "Syncing from Local to CS 241 Remote"
+rsync -asP --delete . mzying@linux.student.cs.uwaterloo.ca:cs241
