@@ -1,4 +1,4 @@
-
+export PATH=~/md-compiler:$PATH
 export PATH=~/.dotfiles/bin:$PATH
 export PATH=~/bb8:$PATH
 export PATH=~/.npm/npm-packages/bin:$PATH
