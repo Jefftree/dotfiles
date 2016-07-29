@@ -1,3 +1,7 @@
-cd ~/Share/workspace/cs241
+if [[ -f /usr/share/doc/pkgfile/command-not-found.zsh ]]; then
+    cd ~/Share/BT/workspace/cs241
+else
+    cd ~/BT/workspace/cs241
+fi
 echo "Syncing from Local to CS 241 Remote"
-rsync -asP --delete . mzying@linux.student.cs.uwaterloo.ca:cs241
+rsync -aP --delete . mzying@linux.student.cs.uwaterloo.ca:cs241
