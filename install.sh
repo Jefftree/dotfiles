@@ -7,7 +7,7 @@ dir=~/.dotfiles
 files="tmux.conf ctags zshrc zlogin zpreztorc zshenv gitconfig npmrc wgetrc"
 
 if [ ! -d ~/.zprezto ]; then
-    git clone https://github.com/sorin-ionescu/prezto.git ~/.zprezto
+    git clone --recursive https://github.com/sorin-ionescu/prezto.git ~/.zprezto
 fi
 
 for file in $files; do
