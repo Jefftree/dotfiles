@@ -3,6 +3,7 @@ alias gs='git status'
 alias gst='git stash'
 alias gsp='git stash pop'
 alias gd='git diff'
+alias gds='git diff --staged'
 alias gpl='git pull'
 alias gps='git push'
 alias ga='git add -A'
@@ -57,3 +58,7 @@ alias Syu='yaourt -Syu'
 
 # Execute last command as root
 alias 'pls'='sudo $(history | tail -n 1 | sed -e "s/^[ ]*[0-9]*[ ]*//g")'
+
+alias 'vev'='source bin/activate'
+
+alias 'ag'='ag --path-to-agignore ~/.dotfiles/agignore'
