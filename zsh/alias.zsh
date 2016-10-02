@@ -6,7 +6,9 @@ alias gd='git diff'
 alias gds='git diff --staged'
 alias gpl='git pull'
 alias gps='git push'
-alias ga='git add'
+alias gfr='git fetch && git rebase'
+alias gr='git rebase -i'
+alias ga='git add -A'
 alias gaa='git add -A'
 alias gc='git commit -am'
 alias gcm='git commit -m'
@@ -25,17 +27,20 @@ alias tm='tmux list-sessions'
 alias m='make'
 alias mc='make clean'
 
-alias vi=vim
+alias vi='vim -w ~/.vim/key.log'
 
 alias l='git ls-files'
 
 alias ll='ls -alGh'
 
-alias pyenv='source bin/activate'
+alias 'vev'='source bin/activate'
 
 unamestr=`uname`
 if [[ "$unamestr" == 'Linux' ]]; then
     alias ls='ls -G --color'
+    alias aria='aria2c'
+    alias baka='baka-mplayer'
+    alias Syu='yaourt -Syu'
 else
     alias ls='ls -G'
 fi
@@ -50,16 +55,10 @@ alias yolovim='vim -N -u NONE'
 
 alias myip="curl http://myip.dnsomatic.com && echo ''"
 
-alias aria='aria2c'
-alias baka='baka-mplayer'
-
 alias 'cd..'='cd ..'
-
-alias Syu='yaourt -Syu'
 
 # Execute last command as root
 alias 'pls'='sudo $(history | tail -n 1 | sed -e "s/^[ ]*[0-9]*[ ]*//g")'
 
-alias 'vev'='source bin/activate'
 
 alias 'ag'='ag --path-to-agignore ~/.dotfiles/agignore'
