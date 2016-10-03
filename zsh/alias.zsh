@@ -33,7 +33,7 @@ alias l='git ls-files'
 
 alias ll='ls -alGh'
 
-alias 'vev'='source bin/activate'
+alias 'vev'='source env/bin/activate'
 
 unamestr=`uname`
 if [[ "$unamestr" == 'Linux' ]]; then
@@ -59,6 +59,5 @@ alias 'cd..'='cd ..'
 
 # Execute last command as root
 alias 'pls'='sudo $(history | tail -n 1 | sed -e "s/^[ ]*[0-9]*[ ]*//g")'
-
 
 alias 'ag'='ag --path-to-agignore ~/.dotfiles/agignore'
