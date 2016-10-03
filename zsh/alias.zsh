@@ -12,6 +12,8 @@ alias ga='git add -A'
 alias gaa='git add -A'
 alias gc='git commit -am'
 alias gcm='git commit -m'
+alias go='git checkout'
+alias gob='git checkout -b'
 
 alias gl="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
 alias gll='git log'
