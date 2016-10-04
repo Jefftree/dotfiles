@@ -64,6 +64,8 @@ alias 'pls'='sudo $(history | tail -n 1 | sed -e "s/^[ ]*[0-9]*[ ]*//g")'
 
 alias 'ag'='ag --path-to-agignore ~/.dotfiles/agignore'
 
+# Ya these two don't work rn...
+
 # Remove stopped containers
 alias 'docker-rmstop'='docker rm $(docker ps -a | grep Exited | awk "{print $1;}")'
 
