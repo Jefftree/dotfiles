@@ -63,3 +63,9 @@ alias 'cd..'='cd ..'
 alias 'pls'='sudo $(history | tail -n 1 | sed -e "s/^[ ]*[0-9]*[ ]*//g")'
 
 alias 'ag'='ag --path-to-agignore ~/.dotfiles/agignore'
+
+# Remove stopped containers
+alias 'docker-rmstop'='docker rm $(docker ps -a | grep Exited | awk "{print $1;}")'
+
+# Remove untagged images
+alias 'docker-clean'='docker rmi $(docker images -q --filter "dangling=true")'
