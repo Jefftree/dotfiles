@@ -36,10 +36,8 @@ HISTSIZE=10000
 SAVEHIST=10000
 HISTFILE=~/.zsh_history
 
-# cd without typing cd
-setopt AUTO_CD
-
-setopt APPEND_HISTORY # Allow multiple terminal sessions to all append to one zsh command history
+setopt AUTO_CD            # cd without typing cd
+setopt APPEND_HISTORY     # Allow multiple terminal sessions to all append to one zsh command history
 setopt INC_APPEND_HISTORY # Add comamnds as they are typed, don't wait until shell exit
 setopt HIST_REDUCE_BLANKS # Remove extra blanks from each command line being added to history
-setopt EXTENDED_HISTORY # Include more information about when the command was executed, etc
+setopt EXTENDED_HISTORY   # Include more information about when the command was executed, etc
