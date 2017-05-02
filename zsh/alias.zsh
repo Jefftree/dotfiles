@@ -29,7 +29,8 @@ alias tm='tmux list-sessions'
 alias m='make'
 alias mc='make clean'
 
-alias vi='vim -w ~/.vim/key.log'
+alias vi='vim'
+#alias vi='vim -w ~/.vim/key.log'
 
 alias l='git ls-files'
 
