@@ -29,7 +29,12 @@ alias tm='tmux list-sessions'
 alias m='make'
 alias mc='make clean'
 
-alias vi='vim'
+if type vim8 >/dev/null; then
+  alias vi='vim8'
+else
+  alias vi='vim'
+fi
+
 #alias vi='vim -w ~/.vim/key.log'
 
 alias l='git ls-files'
