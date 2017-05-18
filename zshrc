@@ -12,7 +12,7 @@ export SCALA_HOME=/usr/local/bin/scala
 source "$HOME/.zprezto/init.zsh"
 
 source "$DOTFILES/zsh/alias.zsh"
-if [[ ~/.localrc ]]; then
+if [[ -f ~/.localrc ]]; then
     source ~/.localrc
 fi
 
