@@ -39,7 +39,7 @@ fi
 
 alias l='git ls-files'
 
-alias ll='ls -alGh'
+alias ll='ls -lGh'
 
 alias 'vev'='source env/bin/activate'
 
@@ -77,3 +77,7 @@ alias 'docker-rmstop'='docker rm $(docker ps -a | grep Exited | awk "{print $1;}
 
 # Remove untagged images
 alias 'docker-clean'='docker rmi $(docker images -q --filter "dangling=true")'
+
+#if [[ -d ~/.emacs.d ]]; then
+  #alias | sed -E "s/'//g; s/^([^=]+)=(.*)$/alias \1 '\2 \$*'/g" >! ~/.emacs.d/eshell/zalias
+#fi
