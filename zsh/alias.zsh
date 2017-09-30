@@ -31,6 +31,7 @@ alias mc='make clean'
 
 if type vim8 >/dev/null; then
   alias vi='vim8'
+  alias vim='vim8'
 else
   alias vi='vim'
 fi
