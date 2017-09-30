@@ -8,10 +8,16 @@ export SCALA_HOME=/usr/local/bin/scala
 #export PATH=$PATH:~/bin/spark-1.5.1-bin-hadoop2.6/bin
 #export PATH=$PATH:~/bin/hadoop-2.6.1
 
+# Colorful output (ps aux, ping)
+if $(grc &>/dev/null) then
+  source `brew --prefix`/etc/grc.bashrc
+fi
+
 # Prezto
 source "$HOME/.zprezto/init.zsh"
 
 source "$DOTFILES/zsh/alias.zsh"
+
 if [[ -f ~/.localrc ]]; then
     source ~/.localrc
 fi
