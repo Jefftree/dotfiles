@@ -9,7 +9,7 @@ export SCALA_HOME=/usr/local/bin/scala
 #export PATH=$PATH:~/bin/hadoop-2.6.1
 
 # Colorful output (ps aux, ping)
-if $(grc &>/dev/null) then
+if $(grc &>/dev/null); then
   source `brew --prefix`/etc/grc.bashrc
 fi
 
