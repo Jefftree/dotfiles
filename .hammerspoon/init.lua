@@ -5,6 +5,7 @@ local alert = require "hs.alert"
 local hints = require "hs.hints"
 local hotkey = require "hs.hotkey"
 local appfinder = require "hs.appfinder"
+local application = require "hs.application"
 
 -- Remove -1 FPS Animation
 window.animationDuration = 0
@@ -19,6 +20,9 @@ local gwidth = grid.GRIDWIDTH
 local gheight = grid.GRIDHEIGHT
 local snapleft = {x = 0, y = 0, w = gwidth/2, h = gheight}
 local snapright = {x = gwidth/2, y = 0, w = gwidth/2, h = gheight}
+local snaptop = {x = 0, y = 0, w = gwidth, h = gheight/2}
+local snapbot = {x = 0, y = gheight/2, w = gwidth, h = gheight/2}
+
 local snapfull = {x = 0, y = 0, w = gwidth, h = gheight}
 
 local singlePane = {
@@ -57,7 +61,7 @@ end
 
 local launch = function(prog)
   return function()
-    hs.application.launchOrFocus(prog)
+    application.launchOrFocus(prog)
     local app = appfinder.appFromName(prog)
     if app then
       app:activate()
@@ -72,6 +76,8 @@ hints.style = "vimperator"
 local bindings = {
   Left = snapwindow(snapleft),
   Right = snapwindow(snapright),
+  Up = snapwindow(snaptop),
+  Down = snapwindow(snapbot),
   T = snapwindow(snapfull),
   M = launch("Airmail"),
   D = launch("Audirvana Plus"),
