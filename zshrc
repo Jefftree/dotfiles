@@ -19,8 +19,6 @@ source "$HOME/.zprezto/init.zsh"
 
 source "$DOTFILES/zsh/alias.zsh"
 
-source "$HOME/.localrc"
-
 if [[ -f ~/.localrc ]]; then
     source ~/.localrc
 fi
