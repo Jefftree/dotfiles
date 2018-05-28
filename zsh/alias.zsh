@@ -17,6 +17,12 @@ alias gob='git checkout -b'
 alias gl="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
 alias gll='git log'
 
+alias hs='hg status'
+alias hc='hg commit'
+alias hd='hg diff'
+alias hb='hg bookmarks'
+alias hm='hg amend'
+
 alias pipi='pip3 install --user'
 
 # Tmux
