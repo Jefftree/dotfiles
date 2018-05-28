@@ -1,3 +1,4 @@
+# -*- mode: sh -*-
 # Execute code that does not affect the current session in the background.
 
 {

@@ -1,3 +1,4 @@
+# -*- mode: sh -*-
 # Environment variables
 
 DOTFILES=$HOME/.dotfiles
