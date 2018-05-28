@@ -14,7 +14,6 @@ alias gc='git commit -am'
 alias gcm='git commit -m'
 alias go='git checkout'
 alias gob='git checkout -b'
-
 alias gl="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
 alias gll='git log'
 
@@ -29,13 +28,7 @@ alias tm='tmux list-sessions'
 alias m='make'
 alias mc='make clean'
 
-if type vim8 >/dev/null; then
-  alias vi='vim8'
-  alias vim='vim8'
-else
-  alias vi='vim'
-fi
-
+alias vi='vim'
 #alias vi='vim -w ~/.vim/key.log'
 
 alias l='git ls-files'
@@ -57,8 +50,6 @@ fi
 alias pce='sudo shutdown -t 0'
 
 alias rm='nocorrect rm'
-
-alias ts='testSuite'
 
 alias yolovim='vim -N -u NONE'
 
