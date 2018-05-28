@@ -4,7 +4,7 @@
 ##########################
 
 dir=~/.dotfiles
-files="tmux.conf ctags zshrc zlogin zpreztorc zshenv gitconfig npmrc wgetrc"
+files="tmux.conf zshrc zlogin zpreztorc zshenv"
 
 if [ ! -d ~/.zprezto ]; then
     git clone --recursive https://github.com/sorin-ionescu/prezto.git ~/.zprezto
