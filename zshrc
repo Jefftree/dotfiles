@@ -19,8 +19,8 @@ source "$HOME/.zprezto/init.zsh"
 
 source "$DOTFILES/zsh/alias.zsh"
 
-if [[ -f ~/.localrc ]]; then
-    source ~/.localrc
+if [[ -f ~/.localrc.zshrc ]]; then
+    source ~/.localrc.zshrc
 fi
 
 # Command not found: Arch only
@@ -39,6 +39,9 @@ zstyle ':completion:*:*:vim:*' file-patterns '^*.(aux|pdf|jpg|png|out):source-fi
 export CLICOLOR=1
 export LSCOLORS=Gxfxcxdxbxegedabagacad
 export LS_COLORS="di=1;34:ln=35:so=32:pi=33:ex=31:bd=34;46:cd=34;43:su=30;41:sg=30;46:tw=30;42:ow=30;43"
+
+export GREP_COLOR='0;31'
+export GREP_COLORS="mt=$GREP_COLOR"
 
 HISTSIZE=10000
 SAVEHIST=10000
