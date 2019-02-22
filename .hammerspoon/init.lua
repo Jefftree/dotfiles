@@ -69,6 +69,17 @@ local launch = function(prog)
   end
 end
 
+local launchFinder = function(prog)
+  return function()
+    application.launchOrFocus(prog)
+    local app = appfinder.appFromName(prog)
+    if app then
+      app:activate()
+      app:selectMenuItem({"Window", "Bring All to Front"})
+    end
+  end
+end
+
 -- Prefix hints with first char of Application
 hints.showTitleThresh = 0
 hints.style = "vimperator"
@@ -79,17 +90,16 @@ local bindings = {
   Up = snapwindow(snaptop),
   Down = snapwindow(snapbot),
   T = snapwindow(snapfull),
-  M = launch("Airmail"),
+  M = launch("Airmail 3"),
   D = launch("Audirvana Plus"),
   P = launch("PDF Expert"),
   B = launch("Firefox"),
   V = launch("mpv"),
   E = launch("Emacs"),
   I = launch("iTerm"),
-  N = launch("Brave"),
-  F = launch("Path Finder"),
-  K = launch("kt"),
-  O = function() hints.windowHints(window.visibleWindows()) end,
+  F = launchFinder("Finder"),
+  K = launch("KeePassXC"),
+  O = launch("Vivaldi"),
 }
 
 for key, func in pairs(bindings) do
@@ -128,9 +138,9 @@ alert.show("Config loaded")
 caffeine = hs.menubar.new()
 function setCaffeineDisplay(state)
   if state then
-    caffeine:setTitle("LIT")
+    caffeine:setTitle("++")
   else
-    caffeine:setTitle("DIM")
+    caffeine:setTitle("--")
   end
 end
 
