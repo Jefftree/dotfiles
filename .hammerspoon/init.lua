@@ -99,7 +99,10 @@ local bindings = {
   I = launch("iTerm"),
   F = launchFinder("Finder"),
   K = launch("KeePassXC"),
-  O = launch("Vivaldi"),
+  -- O = launch("Vivaldi"),
+  Y = launch("Spotify"),
+  O = launch("/Applications/Google Chrome Canary.app"),
+  -- = launch("Lightroom Classic"),
 }
 
 for key, func in pairs(bindings) do
@@ -108,11 +111,11 @@ end
 
 screen.watcher.new(function()
     if #(screen.allScreens()) == 1 then
-      alert.show("Class Time")
+      alert.show("Single Screen")
       configureLayout(singlePane)
     elseif #(screen.allScreens()) == 2 then
-      alert.show("Welcome Home")
-      -- configureLayout(dualPane)
+      alert.show("Dual Screen")
+      configureLayout(dualPane)
     end
 end):start()
 
