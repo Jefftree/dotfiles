@@ -12,7 +12,6 @@ alias ga='git add -A'
 alias gaa='git add -A'
 alias gc='git commit -am'
 alias gcm='git commit -m'
-alias go='git checkout'
 alias gob='git checkout -b'
 alias gl="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
 alias gll='git log'
@@ -67,6 +66,8 @@ alias 'cd..'='cd ..'
 alias 'pls'='sudo $(history | tail -n 1 | sed -e "s/^[ ]*[0-9]*[ ]*//g")'
 
 alias 'ag'='ag --path-to-agignore ~/.dotfiles/agignore'
+
+alias takeover='tmux detach -a'
 
 # Ya these two don't work rn...
 
