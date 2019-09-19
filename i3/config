@@ -24,7 +24,7 @@ set $tag9 "9"
 default_border none
 hide_edge_borders both
 
-set $monitor_one DP-0
+set $monitor_one DP-6
 
 # Bind the workspaces for monitor one
 workspace $tag1 output $monitor_one
@@ -51,9 +51,9 @@ font pango:monospace 10
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
-exec "setxkbmap us -variant colemak"
+exec setxkbmap us -variant colemak
 
-exec xrandr --output DP-0 --left-of DP-2
+exec xrandr --output DP-6 --left-of DP-2
 
 # Pulse Audio controls
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
@@ -167,6 +167,9 @@ bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+
+bindsym $mod+Shift+m exec "setxkbmap us -variant colemak"
+bindsym $mod+Shift+b exec "setxkbmap us"
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
