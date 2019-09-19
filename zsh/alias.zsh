@@ -16,6 +16,8 @@ alias gob='git checkout -b'
 alias gl="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
 alias gll='git log'
 
+alias gfb='git fetch upstream && git rebase upstream/master'
+
 alias hs='hg status'
 alias hc='hg commit'
 alias hd='hg diff'
