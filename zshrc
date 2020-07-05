@@ -1,10 +1,7 @@
 # -*- mode: sh -*-
-export PATH=~/md-compiler:$PATH
 export PATH=~/.dotfiles/bin:$PATH
-export PATH=~/bb8:$PATH
 export PATH=~/.npm/npm-packages/bin:$PATH
 
-export SCALA_HOME=/usr/local/bin/scala
 #export PATH=$PATH:$SCALA_HOME/bin
 #export PATH=$PATH:~/bin/spark-1.5.1-bin-hadoop2.6/bin
 #export PATH=$PATH:~/bin/hadoop-2.6.1
