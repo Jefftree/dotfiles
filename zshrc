@@ -5,10 +5,12 @@ export PATH=~/.npm/npm-packages/bin:$PATH
 export PATH=~/gospace/bin:$PATH
 export PATH=~/bin:$PATH
 export GOPATH=~/gospace
+export PATH=/opt/homebrew/bin:$PATH
 
 #export PATH=$PATH:$SCALA_HOME/bin
 #export PATH=$PATH:~/bin/spark-1.5.1-bin-hadoop2.6/bin
 #export PATH=$PATH:~/bin/hadoop-2.6.1
+export PATH="~/workspace/kubernetes/third_party/etcd:${PATH}"
 
 # Colorful output (ps aux, ping)
 if $(grc &>/dev/null); then
