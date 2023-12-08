@@ -1,17 +1,4 @@
 # -*- mode: sh -*-
-export PATH=~/.dotfiles/bin:$PATH
-export PATH=/usr/local/go/bin:$PATH
-export PATH=~/.npm/npm-packages/bin:$PATH
-export PATH=~/gospace/bin:$PATH
-export PATH=~/bin:$PATH
-export GOPATH=~/gospace
-export PATH=/opt/homebrew/bin:$PATH
-
-#export PATH=$PATH:$SCALA_HOME/bin
-#export PATH=$PATH:~/bin/spark-1.5.1-bin-hadoop2.6/bin
-#export PATH=$PATH:~/bin/hadoop-2.6.1
-export PATH="~/workspace/kubernetes/third_party/etcd:${PATH}"
-
 # Colorful output (ps aux, ping)
 if $(grc &>/dev/null); then
     source `brew --prefix`/etc/grc.bashrc
@@ -63,3 +50,11 @@ setopt EXTENDED_HISTORY   # Include more information about when the command was 
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ -f ~/.p10k.zsh ]] && source ~/.p10k.zsh
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '~/google-cloud-sdk/path.zsh.inc' ]; then . '~/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '~/google-cloud-sdk/completion.zsh.inc' ]; then . '~/google-cloud-sdk/completion.zsh.inc'; fi
+
+#hidutil property --set '{"UserKeyMapping":[{"HIDKeyboardModifierMappingSrc":0x700000039,"HIDKeyboardModifierMappingDst":0x70000002A}]}'
