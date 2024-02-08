@@ -26,6 +26,9 @@ alias hm='hg amend'
 
 alias pipi='pip3 install --user'
 
+alias cat='batcat'
+alias ll='exa'
+
 # Tmux
 alias ta='tmux attach'
 alias tad='tmux attach -d'
@@ -40,7 +43,7 @@ alias vi='vim'
 
 alias l='git ls-files'
 
-alias ll='ls -lGh'
+# alias ll='ls -lGh'
 
 alias 'vev'='source env/bin/activate'
 

@@ -1,4 +1,15 @@
 # -*- mode: sh -*-
+export PATH=~/.dotfiles/bin:$PATH
+export PATH=/usr/local/go/bin:$PATH
+export PATH=~/.npm/npm-packages/bin:$PATH
+export PATH=~/gospace/bin:$PATH
+export PATH=~/bin:$PATH
+export PATH=~/gospace/bin:$PATH
+export GOPATH=~/gospace
+export GOPROXY=https://proxy.golang.org
+export PATH="~/workspace/kubernetes/third_party/etcd:${PATH}"
+# export GOROOT=~/workspace
+
 # Colorful output (ps aux, ping)
 if $(grc &>/dev/null); then
     source `brew --prefix`/etc/grc.bashrc
@@ -25,6 +36,7 @@ zstyle ':completion:*:*:vim:*' file-patterns '^*.(aux|pdf|jpg|png|out):source-fi
 if type kubectl > /dev/null; then
   source <(kubectl completion zsh | sed 's/kubectl/kubectl/g')
   alias k=kubectl
+  complete -o default -F __start_kubectl k
 fi
 
 # Colors
@@ -48,6 +60,7 @@ setopt INC_APPEND_HISTORY # Add comamnds as they are typed, don't wait until she
 setopt HIST_REDUCE_BLANKS # Remove extra blanks from each command line being added to history
 setopt EXTENDED_HISTORY   # Include more information about when the command was executed, etc
 
+
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ -f ~/.p10k.zsh ]] && source ~/.p10k.zsh
 
@@ -58,3 +71,7 @@ if [ -f '~/google-cloud-sdk/path.zsh.inc' ]; then . '~/google-cloud-sdk/path.zsh
 if [ -f '~/google-cloud-sdk/completion.zsh.inc' ]; then . '~/google-cloud-sdk/completion.zsh.inc'; fi
 
 #hidutil property --set '{"UserKeyMapping":[{"HIDKeyboardModifierMappingSrc":0x700000039,"HIDKeyboardModifierMappingDst":0x70000002A}]}'
+# Generated for envman. Do not edit.
+[ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"
+
+eval "$(zoxide init zsh)"
