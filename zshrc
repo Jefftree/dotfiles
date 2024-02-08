@@ -1,9 +1,7 @@
 # -*- mode: sh -*-
 export PATH=~/.dotfiles/bin:$PATH
 export PATH=/usr/local/go/bin:$PATH
-export PATH=~/.npm/npm-packages/bin:$PATH
 export PATH=~/gospace/bin:$PATH
-export PATH=~/bin:$PATH
 export PATH=~/gospace/bin:$PATH
 export GOPATH=~/gospace
 export GOPROXY=https://proxy.golang.org
