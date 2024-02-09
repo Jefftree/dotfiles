@@ -6,7 +6,9 @@ export PATH=~/gospace/bin:$PATH
 export GOPATH=~/gospace
 export GOPROXY=https://proxy.golang.org
 export PATH="~/workspace/kubernetes/third_party/etcd:${PATH}"
-# export GOROOT=~/workspace
+export GOROOT=~/workspace
+#
+export STARSHIP_CONFIG=~/.dotfiles/starship.toml
 
 # Colorful output (ps aux, ping)
 if $(grc &>/dev/null); then
@@ -73,3 +75,4 @@ setopt EXTENDED_HISTORY   # Include more information about when the command was 
 [ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"
 
 eval "$(zoxide init zsh)"
+eval "$(starship init zsh)"
