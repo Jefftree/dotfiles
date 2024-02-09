@@ -5,7 +5,7 @@ export PATH=~/gospace/bin:$PATH
 export PATH=~/gospace/bin:$PATH
 export GOPATH=~/gospace
 export GOPROXY=https://proxy.golang.org
-export PATH="~/workspace/kubernetes/third_party/etcd:${PATH}"
+export PATH="~/workspace/src/k8s.io/kubernetes/third_party/etcd:${PATH}"
 export GOROOT=~/workspace
 #
 export STARSHIP_CONFIG=~/.dotfiles/starship.toml
