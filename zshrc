@@ -6,7 +6,7 @@ export PATH=~/gospace/bin:$PATH
 export GOPATH=~/gospace
 export GOPROXY=https://proxy.golang.org
 export PATH="~/workspace/src/k8s.io/kubernetes/third_party/etcd:${PATH}"
-export GOROOT=~/workspace
+# export GOROOT=""
 #
 export STARSHIP_CONFIG=~/.dotfiles/starship.toml
 
@@ -43,15 +43,15 @@ fi
 # You can't just change the terminal...
 #export TERM=screen-256color
 #export TERM=rxvt-unicode-256color
-export CLICOLOR=1
-export LSCOLORS=Gxfxcxdxbxegedabagacad
-export LS_COLORS="di=1;34:ln=35:so=32:pi=33:ex=31:bd=34;46:cd=34;43:su=30;41:sg=30;46:tw=30;42:ow=30;43"
+# export CLICOLOR=1
+# export LSCOLORS=Gxfxcxdxbxegedabagacad
+# export LS_COLORS="di=1;34:ln=35:so=32:pi=33:ex=31:bd=34;46:cd=34;43:su=30;41:sg=30;46:tw=30;42:ow=30;43"
 
-export GREP_COLOR='0;31'
-export GREP_COLORS="mt=$GREP_COLOR"
+# export GREP_COLOR='0;31'
+# export GREP_COLORS="mt=$GREP_COLOR"
 
-HISTSIZE=100000
-SAVEHIST=100000
+HISTSIZE=1000000
+SAVEHIST=1000000
 HISTFILE=~/.zsh_history
 
 setopt AUTO_CD            # cd without typing cd
@@ -62,7 +62,7 @@ setopt EXTENDED_HISTORY   # Include more information about when the command was 
 
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ -f ~/.p10k.zsh ]] && source ~/.p10k.zsh
+# [[ -f ~/.p10k.zsh ]] && source ~/.p10k.zsh
 
 # The next line updates PATH for the Google Cloud SDK.
 # if [ -f '~/google-cloud-sdk/path.zsh.inc' ]; then . '~/google-cloud-sdk/path.zsh.inc'; fi
@@ -71,7 +71,6 @@ setopt EXTENDED_HISTORY   # Include more information about when the command was 
 # if [ -f '~/google-cloud-sdk/completion.zsh.inc' ]; then . '~/google-cloud-sdk/completion.zsh.inc'; fi
 
 #hidutil property --set '{"UserKeyMapping":[{"HIDKeyboardModifierMappingSrc":0x700000039,"HIDKeyboardModifierMappingDst":0x70000002A}]}'
-# Generated for envman. Do not edit.
 [ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"
 
 eval "$(zoxide init zsh)"
