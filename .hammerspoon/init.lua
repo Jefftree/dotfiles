@@ -26,17 +26,13 @@ local snapbot = {x = 0, y = gheight/2, w = gwidth, h = gheight/2}
 local snapfull = {x = 0, y = 0, w = gwidth, h = gheight}
 
 local singlePane = {
-  Airmail = {1, snapfull},
   iTerm2 = {1, snapfull},
-  ["Path Finder"] = {1, snapfull},
   Emacs = {1, snapfull},
   Firefox = {1, snapfull},
 }
 
 local dualPane = {
-  Airmail = {1, snapfull},
   iTerm2 = {2, snapright},
-  ["Path Finder"] = {2, snapleft},
   Emacs = {1, snapleft},
   Firefox = {1, snapright},
 }
