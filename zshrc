@@ -29,8 +29,11 @@ if [[ -f /usr/share/doc/pkgfile/command-not-found.zsh ]]; then
     source /usr/share/doc/pkgfile/command-not-found.zsh
 fi
 
+# xref: https://github.com/eddiezane/lunchy/issues/57
+autoload -U +X bashcompinit && bashcompinit
+autoload -U +X compinit && compinit
+
 # Ignore binary/compiled files for vim autocompletion
-compinit
 zstyle ':completion:*:*:vim:*' file-patterns '^*.(aux|pdf|jpg|png|out):source-files' '*:all-files'
 
 if type kubectl > /dev/null; then
