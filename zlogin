@@ -10,11 +10,3 @@
 } &!
 
 [[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && exec startx
-
-# Moose inspirational message of the day
-#if (( $+commands[fortune] )); then
-  #if [[ -t 0 || -t 1 ]]; then
-    #fortune -s | cowsay -f moose | lolcat
-    #print
-  #fi
-#fi

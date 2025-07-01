@@ -11,9 +11,6 @@ export PATH=~/bin:$PATH
 export GOPATH=~/gospace
 export PATH=/opt/homebrew/bin:$PATH
 
-#export PATH=$PATH:$SCALA_HOME/bin
-#export PATH=$PATH:~/bin/spark-1.5.1-bin-hadoop2.6/bin
-#export PATH=$PATH:~/bin/hadoop-2.6.1
 export PATH="~/workspace/kubernetes/third_party/etcd:${PATH}"
 
 # Ensure that a non-login, non-interactive shell has a defined environment.
