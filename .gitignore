@@ -1,3 +1,4 @@
 .DS_Store
 .pentadactyl/info
 *.txt
+.zsh_secrets

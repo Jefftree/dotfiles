@@ -2,21 +2,21 @@
 export PATH=~/.dotfiles/bin:$PATH
 export PATH=/usr/local/go/bin:$PATH
 export PATH=~/gospace/bin:$PATH
-export PATH=~/gospace/bin:$PATH
 export GOPATH=~/gospace
 export GOPROXY=https://proxy.golang.org
-export PATH="~/workspace/src/k8s.io/kubernetes/third_party/etcd:${PATH}"
+export PATH="~/gospace/src/k8s.io/kubernetes/third_party/etcd:${PATH}"
+export PATH="~/gospace/src/k8s.io/kubernetes/third_party/protoc:${PATH}"
+export GOOGLE_API_USE_CLIENT_CERTIFICATE=FALSE
 # export GOROOT=""
 #
 export STARSHIP_CONFIG=~/.dotfiles/starship.toml
 
-# Colorful output (ps aux, ping)
-if $(grc &>/dev/null); then
-    source `brew --prefix`/etc/grc.bashrc
-fi
-
 # Prezto
 source "$HOME/.zprezto/init.zsh"
+
+if [[ -f ~/.zsh_secrets ]]; then
+    source ~/.zsh_secrets
+fi
 
 source "$DOTFILES/zsh/alias.zsh"
 
@@ -78,3 +78,8 @@ setopt EXTENDED_HISTORY   # Include more information about when the command was 
 
 eval "$(zoxide init zsh)"
 eval "$(starship init zsh)"
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+eval "$(atuin init zsh)"
