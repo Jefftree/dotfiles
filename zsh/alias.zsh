@@ -26,7 +26,7 @@ alias hm='hg amend'
 
 alias pipi='pip3 install --user'
 
-alias cat='batcat'
+alias cat='bat'
 alias ll='exa'
 
 # Tmux

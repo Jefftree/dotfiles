@@ -4,14 +4,12 @@
 DOTFILES=$HOME/.dotfiles
 
 export PATH=~/.dotfiles/bin:$PATH
-export PATH=/usr/local/go/bin:$PATH
-export PATH=~/.npm/npm-packages/bin:$PATH
-export PATH=~/gospace/bin:$PATH
-export PATH=~/bin:$PATH
-export GOPATH=~/gospace
+#export PATH=/usr/local/go/bin:$PATH
+#export PATH=~/.npm/npm-packages/bin:$PATH
+#export PATH=~/gospace/bin:$PATH
+#export PATH=~/bin:$PATH
+#export GOPATH=~/gospace
 export PATH=/opt/homebrew/bin:$PATH
-
-export PATH="~/workspace/kubernetes/third_party/etcd:${PATH}"
 
 # Ensure that a non-login, non-interactive shell has a defined environment.
 if [[ "$SHLVL" -eq 1 && ! -o LOGIN && -s "${ZDOTDIR:-$HOME}/.zprofile" ]]; then
