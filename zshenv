@@ -4,11 +4,11 @@
 DOTFILES=$HOME/.dotfiles
 
 export PATH=~/.dotfiles/bin:$PATH
-#export PATH=/usr/local/go/bin:$PATH
-#export PATH=~/.npm/npm-packages/bin:$PATH
-#export PATH=~/gospace/bin:$PATH
-#export PATH=~/bin:$PATH
-#export GOPATH=~/gospace
+export PATH=/usr/local/go/bin:$PATH
+export PATH=~/.npm/npm-packages/bin:$PATH
+export PATH=~/gospace/bin:$PATH
+export PATH=~/bin:$PATH
+export GOPATH=~/gospace
 export PATH=/opt/homebrew/bin:$PATH
 
 # Ensure that a non-login, non-interactive shell has a defined environment.
